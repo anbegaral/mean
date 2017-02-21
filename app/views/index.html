@@ -1,0 +1,58 @@
+<!doctype html>
+
+<html ng-app="MainApp">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Example MEAN</title>
+	<!-- Loading bootstrap -->
+	<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css">
+	<!-- LOading angular -->
+	<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.16/angular.min.js"></script>
+	<!-- build:js js/main.min.js -->
+	<!-- Loading client js -->
+	<script src="core.js"></script>
+	<!-- endbuild -->
+
+</head>
+<body ng-controller="mainController">
+	<div class="container">
+
+		<div class="jumbotron text-center" ng-prueba>
+			<h1>Nº of users: <span class="label label-success">{{ persons.length }}</span></h1>
+		</div>
+
+		<div class="row">
+			<div class="col-sm-6 col-sm-offset-1">
+				<table class="table table-striped">
+					<tr class="info">
+						<td>Name</td>
+						<td>Surname</td>
+						<td>Age</td>
+					</tr>
+					<tr ng-repeat="person in persons" ng-click="selectPerson(person)">
+						<td>{{ person.name }}</td>
+						<td>{{ person.surname }}</td>
+						<td>{{ person.age }}</td>						
+					</tr>
+				</table>					
+			</div>
+			<div class="col-sm-4 col-sm-offset-1 text-center">
+				<form name="myForm">
+					<div class="form-group">
+						<input type="text" class="form-control input-lg text-center" placeholder="Name" ng-model="newPerson.name" required>
+						<br>
+						<input type="text" class="form-control input-lg text-center" placeholder="Surname" ng-model="newPerson.surname" required>
+						<br>
+						<input type="text" class="form-control input-lg text-center" placeholder="Age" ng-model="newPerson.age" required>
+					</div>
+
+					<button type="submit" class="btn btn-success btn-lg" ng-click="registerPerson()" ng-disabled="myForm.$invalid || selected">Registry</button>
+					<button type="submit" class="btn btn-warning btn-lg" ng-click="UpdatePerson(newPerson)" ng-disabled="!newPerson.name || !newPerson.surname || !newPerson.age || !selected">Modify</button>
+					<button type="submit" class="btn btn-danger btn-lg" ng-click="deletePerson(newPerson)" ng-disabled="!newPerson.name || !newPerson.surname || !newPerson.age || !selected">Delete</button>
+				</form>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
