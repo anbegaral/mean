@@ -1,0 +1,31 @@
+{
+  "name": "mean",
+  "version": "1.0.0",
+  "description": "example of mean project",
+  "main": "server.js",
+  "dependencies": {
+    "body-parser": "^1.15.2",
+    "express": "^4.14.0",
+    "logger": "0.0.1",
+    "method-override": "^2.3.6",
+    "mongoose": "^4.5.1"
+  },
+  "devDependencies": {
+    "browser-sync": "^2.14.0",
+    "gulp": "^3.9.1",
+    "gulp-if": "^2.0.1",
+    "gulp-jshint": "^2.0.1",
+    "gulp-sass": "^2.3.2",
+    "gulp-uglify": "^2.0.0",
+    "gulp-useref": "^3.1.0",
+    "gulp-util": "^3.0.7",
+    "jshint": "^2.9.2",
+    "jshint-stylish": "^2.2.1"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "author": "",
+  "license": "ISC"
+}
